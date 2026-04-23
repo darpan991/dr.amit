@@ -222,7 +222,7 @@
 
                             <!-- Video Section -->
                             <div class="col-lg-6 col-md-6">
-                                <div class="consultation__video set-bg" data-setbg="img/dr/about.jpg">
+                                <div class="consultation__video set-bg" data-setbg="img/dr/Dr_Amit_Upadhyay_p2.jpg">
                                     
                                 </div>
                             </div>
@@ -233,29 +233,29 @@
         </div>
     </section>
     <script id="o6xq2k">
-document.getElementById("whatsappForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+        e.preventDefault();
 
-    // Get values
-    let name = this.querySelector('input[placeholder="Parent / Patient Name"]').value;
-    let phone = this.querySelector('input[placeholder="Phone Number"]').value;
-    let date = this.querySelector('input[placeholder="Preferred Date"]').value;
-    let service = this.querySelector('select').value;
+        // Get values
+        let name = this.querySelector('input[placeholder="Parent / Patient Name"]').value;
+        let phone = this.querySelector('input[placeholder="Phone Number"]').value;
+        let date = this.querySelector('input[placeholder="Preferred Date"]').value;
+        let service = this.querySelector('select').value;
 
-    // Message create
-    let message = `Hello, I want to book an appointment.%0A
-Name: ${name}%0A
-Phone: ${phone}%0A
-Date: ${date}%0A
-Service: ${service}`;
+        // Message create
+        let message = `Hello, I want to book an appointment.%0A
+    Name: ${name}%0A
+    Phone: ${phone}%0A
+    Date: ${date}%0A
+    Service: ${service}`;
 
-    // WhatsApp URL
-    let url = `https://wa.me/919568692411?text=${message}`;
+        // WhatsApp URL
+        let url = `https://wa.me/919568692411?text=${message}`;
 
-    // Open WhatsApp
-    window.open(url, "_blank");
-});
-</script>
+        // Open WhatsApp
+        window.open(url, "_blank");
+    });
+    </script>
     <!-- Consultation Section End -->
 
     <!-- Chooseus Section Begin -->
