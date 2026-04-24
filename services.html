@@ -131,14 +131,47 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Services Section Begin -->
-    <section class="services-page spad">
+    <!-- Sirf yeh style apne <head> mein add karo -->
+<style>
+  .service-panel { display: none; }
+  .service-panel.active {
+    display: block;
+    animation: sfadeIn 0.35s ease;
+  }
+  @keyframes sfadeIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .services__sidebar .card-body ul li a { cursor: pointer; }
+  .services__sidebar .card-body ul li a.active-link {
+    color: #1a73e8;
+    font-weight: 700;
+  }
+  .btn-show-all {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-show-all:hover { opacity: 0.88; }
+</style>
+
+<section class="services-page spad">
     <div class="container">
         <div class="row">
 
             <!-- MAIN CONTENT -->
             <div class="col-lg-8 order-lg-2">
+
                 <!-- Existing NICU Details -->
-                <div class="services__details" id="nicu-care">
+                <div class="service-panel active services__details" id="nicu-care">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="services__details__title">
@@ -222,8 +255,8 @@
                     </div>
                 </div>
 
-                <!-- New Service: Premature Baby Care -->
-                <div class="services__details mt-5" id="premature-baby-care">
+                <!-- Premature Baby Care -->
+                <div class="service-panel services__details" id="premature-baby-care">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="services__details__title">
@@ -277,8 +310,8 @@
                     </div>
                 </div>
 
-                <!-- New Service: Ventilation Support -->
-                <div class="services__details mt-5" id="ventilation-support">
+                <!-- Ventilation Support -->
+                <div class="service-panel services__details" id="ventilation-support">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="services__details__title">
@@ -332,8 +365,8 @@
                     </div>
                 </div>
 
-                <!-- New Service: High-Risk Newborn Care -->
-                <div class="services__details mt-5" id="high-risk-newborn-care">
+                <!-- High-Risk Newborn Care -->
+                <div class="service-panel services__details" id="high-risk-newborn-care">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="services__details__title">
@@ -387,8 +420,8 @@
                     </div>
                 </div>
 
-                <!-- New Service: Child Specialist Consultation -->
-                <div class="services__details mt-5" id="child-specialist-consultation">
+                <!-- Child Specialist Consultation -->
+                <div class="service-panel services__details" id="child-specialist-consultation">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="services__details__title">
@@ -442,8 +475,8 @@
                     </div>
                 </div>
 
-                <!-- New Service: Vaccination Programs -->
-                <div class="services__details mt-5" id="vaccination-programs">
+                <!-- Vaccination Programs -->
+                <div class="service-panel services__details" id="vaccination-programs">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="services__details__title">
@@ -497,8 +530,8 @@
                     </div>
                 </div>
 
-                <!-- New Service: Growth Monitoring -->
-                <div class="services__details mt-5" id="growth-monitoring">
+                <!-- Growth Monitoring -->
+                <div class="service-panel services__details" id="growth-monitoring">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="services__details__title">
@@ -552,8 +585,8 @@
                     </div>
                 </div>
 
-                <!-- New Service: General Pediatric Care -->
-                <div class="services__details mt-5" id="general-pediatric-care">
+                <!-- General Pediatric Care -->
+                <div class="service-panel services__details" id="general-pediatric-care">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="services__details__title">
@@ -608,6 +641,7 @@
                 </div>
 
             </div>
+            <!-- /MAIN CONTENT -->
 
             <!-- SIDEBAR (Unchanged) -->
             <div class="col-lg-4 order-lg-1">
@@ -618,6 +652,9 @@
                             <h4><img src="img/icons/services-icon.png"> Our Services</h4>
                         </div>
 
+                        <!-- Show All Button -->
+                        <button class="btn-show-all" onclick="showAllServices()">☰ Show All Services</button>
+
                         <div class="accordion">
 
                             <div class="card">
@@ -626,10 +663,10 @@
                                 </div>
                                 <div class="card-body">
                                     <ul>
-                                        <li><a href="#nicu-care">NICU Care</a></li>
-                                        <li><a href="#premature-baby-care">Premature Baby Care</a></li>
-                                        <li><a href="#ventilation-support">Ventilation Support</a></li>
-                                        <li><a href="#high-risk-newborn-care">High-Risk Newborn Care</a></li>
+                                        <li><a onclick="showService('nicu-care', this)">NICU Care</a></li>
+                                        <li><a onclick="showService('premature-baby-care', this)">Premature Baby Care</a></li>
+                                        <li><a onclick="showService('ventilation-support', this)">Ventilation Support</a></li>
+                                        <li><a onclick="showService('high-risk-newborn-care', this)">High-Risk Newborn Care</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -640,10 +677,10 @@
                                 </div>
                                 <div class="card-body">
                                     <ul>
-                                        <li><a href="#child-specialist-consultation">Child Specialist Consultation</a></li>
-                                        <li><a href="#vaccination-programs">Vaccination Programs</a></li>
-                                        <li><a href="#growth-monitoring">Growth Monitoring</a></li>
-                                        <li><a href="#general-pediatric-care">General Pediatric Care</a></li>
+                                        <li><a onclick="showService('child-specialist-consultation', this)">Child Specialist Consultation</a></li>
+                                        <li><a onclick="showService('vaccination-programs', this)">Vaccination Programs</a></li>
+                                        <li><a onclick="showService('growth-monitoring', this)">Growth Monitoring</a></li>
+                                        <li><a onclick="showService('general-pediatric-care', this)">General Pediatric Care</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -678,33 +715,74 @@
                         </form>
                     </div>
 
-                    <script>
-                    function sendToWhatsApp() {
-                        var name = document.getElementById("name").value;
-                        var phone = document.getElementById("phone").value;
-                        var date = document.getElementById("date").value;
-                        var service = document.getElementById("service").value;
-
-                        var message = `Appointment Request:%0A
-                        Name: ${name}%0A
-                        Phone: ${phone}%0A
-                        Date: ${date}%0A
-                        Service: ${service}`;
-
-                        var whatsappNumber = "919568692411"; // your number with country code
-
-                        var url = "https://wa.me/" + whatsappNumber + "?text=" + message;
-
-                        window.open(url, "_blank");
-                    }
-                    </script>
-
                 </div>
             </div>
+            <!-- /SIDEBAR -->
 
         </div>
     </div>
 </section>
+
+<!-- Sirf yeh script apne </body> se pehle add karo -->
+<script>
+    /* ---- Ek service dikhao, baaki chhupao ---- */
+    function showService(id, clickedLink) {
+        // Sab panels band karo
+        document.querySelectorAll('.service-panel').forEach(function(panel) {
+            panel.classList.remove('active');
+        });
+
+        // Sirf clicked wala dikhao
+        var target = document.getElementById(id);
+        if (target) {
+            target.classList.add('active');
+            // Page scroll up karo
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Pehle ka active-link hatao
+        document.querySelectorAll('.services__sidebar .card-body ul li a').forEach(function(a) {
+            a.classList.remove('active-link');
+        });
+
+        // Clicked link highlight karo
+        if (clickedLink) clickedLink.classList.add('active-link');
+    }
+
+    /* ---- Sab services ek saath dikhao ---- */
+    function showAllServices() {
+        document.querySelectorAll('.service-panel').forEach(function(panel) {
+            panel.classList.add('active');
+        });
+        document.querySelectorAll('.services__sidebar .card-body ul li a').forEach(function(a) {
+            a.classList.remove('active-link');
+        });
+    }
+
+    /* ---- WhatsApp Appointment ---- */
+    function sendToWhatsApp() {
+        var name    = document.getElementById("name").value;
+        var phone   = document.getElementById("phone").value;
+        var date    = document.getElementById("date").value;
+        var service = document.getElementById("service").value;
+
+        var message = "Appointment Request:%0A"
+            + "Name: " + name + "%0A"
+            + "Phone: " + phone + "%0A"
+            + "Date: " + date + "%0A"
+            + "Service: " + service;
+
+        window.open("https://wa.me/919568692411?text=" + message, "_blank");
+    }
+
+    /* ---- URL Hash support: services.html#vaccination-programs ---- */
+    window.addEventListener('DOMContentLoaded', function() {
+        var hash = window.location.hash.replace('#', '');
+        if (hash && document.getElementById(hash)) {
+            showService(hash, null);
+        }
+    });
+</script>
     <!-- Services Section End -->
 
     <!-- Footer Section Begin -->

@@ -133,11 +133,13 @@
         .hero {
             position: relative;
             background-image: url("img/dr/hero-mobile.png") !important;
-            background-position: center;
+            background-position: top center; /* 👈 important change */
             background-size: cover;
+            padding-top: 120px; /* 👈 push text down */
+            padding-bottom: 60px;
         }
 
-        /* Overlay */
+        /* Dark overlay */
         .hero::before {
             content: "";
             position: absolute;
@@ -145,23 +147,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.45); /* adjust opacity if needed */
+            background: rgba(0, 0, 0, 0.55); /* 👈 slightly darker */
             z-index: 1;
         }
 
-        /* Bring text above overlay */
         .hero .container {
             position: relative;
             z-index: 2;
         }
 
-        /* Make text white for visibility */
+        /* Text styling */
+        .hero__text {
+            margin-top: 80px; /* 👈 extra spacing from top */
+        }
+
         .hero__text h2,
         .hero__text p,
         .hero__text span {
             color: #fff;
         }
 
+        .hero__text h2 {
+            font-size: 26px; /* 👈 mobile friendly */
+            line-height: 1.3;
+        }
 
         .consultation__form {
             margin-top: 0px !important;
@@ -623,29 +632,30 @@
 
     <!-- Testimonials Section Begin -->
     <section class="testimonials spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-title">
-                        <span>Testimonials</span>
-                        <h2>What Parents Say</h2>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <span>Testimonials</span>
+                    <h2>What Parents Say</h2>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="testimonial__slider owl-carousel">
+        <div class="row">
+            <div class="testimonial__slider owl-carousel">
 
-                    <!-- Testimonial 1 -->
-                    <div class="col-lg-6">
+                <!-- Testimonial 1 - Jahangir Alam -->
+                <div class="col-lg-6">
+                    <a href="https://www.google.com/search?num=10&sca_esv=c153a4e0857361d4&rlz=1C1VDKB_enIN1126IN1126&sxsrf=ANbL-n6lsd-fg8_pZy_yNipjqjLinYR3Yg:1776939264808&kgmid=/g/11y63w8z1f&q=Dr.+Amit+Upadhyay+%7C+Best+Sr.+Pediatrician,+Child+Specialist+Doctor+in+Meerut+%7C&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5aea14d2b9567395&utm_source=sh/x/loc/uni/m1/1#lrd=0x390c655c8c1fe40f:0x22cd1a0a6c203116,3,,,," target="_blank" style="text-decoration: none; color: inherit;">
                         <div class="testimonial__item">
                             <div class="testimonial__author">
                                 <div class="testimonial__author__icon">
                                     <i class="fa-solid fa-quote-left"></i>
                                 </div>
                                 <div class="testimonial__author__text">
-                                    <h5>Rohit Sharma</h5>
-                                    <span>Parent</span>
+                                    <h5>Jahangir Alam</h5>
+                                    <span>Parent · 2 months ago</span>
                                 </div>
                             </div>
                             <div class="rating">
@@ -656,15 +666,96 @@
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <p>
-                                Our premature baby received the best care in the NICU. 
-                                Dr. Amit Upadhyay and his team handled everything with 
-                                expertise and compassion. We are truly grateful.
+                                Baby of Lubna Alam — we admitted our child in critical condition under Dr. Amit Upadhyay Sir in the NICU. After almost one month of treatment, we are finally taking our baby home. The NICU staff gave us excellent support, there was no billing pressure, and Dr. Amit Sir even gave us a discount. Thanks to Dr. Amit Sir, Simran Ma'am and their entire team.
                             </p>
                         </div>
-                    </div>
+                    </a>
+                </div>
 
-                    <!-- Testimonial 2 -->
-                    <div class="col-lg-6">
+                <!-- Testimonial 2 - Abhi Singh -->
+                <div class="col-lg-6">
+                    <a href="https://www.google.com/search?num=10&sca_esv=c153a4e0857361d4&rlz=1C1VDKB_enIN1126IN1126&sxsrf=ANbL-n6lsd-fg8_pZy_yNipjqjLinYR3Yg:1776939264808&kgmid=/g/11y63w8z1f&q=Dr.+Amit+Upadhyay+%7C+Best+Sr.+Pediatrician,+Child+Specialist+Doctor+in+Meerut+%7C&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5aea14d2b9567395&utm_source=sh/x/loc/uni/m1/1#lrd=0x390c655c8c1fe40f:0x22cd1a0a6c203116,3,,,," target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="testimonial__item">
+                            <div class="testimonial__author">
+                                <div class="testimonial__author__icon">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial__author__text">
+                                    <h5>Abhi Singh</h5>
+                                    <span>Local Guide · 2 months ago</span>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>
+                                Blessed with a preterm daughter 3 months back, almost with no hope — and then Dr. Amit Upadhyay came like a miraculous blessing to our life. Today we are bringing our healthy daughter home. Thank you Dr. Amit and their wonderful staff. Blessings and best wishes to you all.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Testimonial 3 - Bhavyankit Tyagi -->
+                <div class="col-lg-6">
+                    <a href="https://www.google.com/search?num=10&sca_esv=c153a4e0857361d4&rlz=1C1VDKB_enIN1126IN1126&sxsrf=ANbL-n6lsd-fg8_pZy_yNipjqjLinYR3Yg:1776939264808&kgmid=/g/11y63w8z1f&q=Dr.+Amit+Upadhyay+%7C+Best+Sr.+Pediatrician,+Child+Specialist+Doctor+in+Meerut+%7C&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5aea14d2b9567395&utm_source=sh/x/loc/uni/m1/1#lrd=0x390c655c8c1fe40f:0x22cd1a0a6c203116,3,,,," target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="testimonial__item">
+                            <div class="testimonial__author">
+                                <div class="testimonial__author__icon">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial__author__text">
+                                    <h5>Bhavyankit Tyagi</h5>
+                                    <span>Parent · 5 months ago</span>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>
+                                At the time of delivery, my baby had a lung infection, so we took the baby to Nutrima Hospital, Meerut, to Dr. Amit Upadhyay. He diagnosed and treated our baby very well. Thank you, Sir — you are such a great person! The hospital is not very costly, and the staff is also very good.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Testimonial 4 - Gaurav Verma -->
+                <div class="col-lg-6">
+                    <a href="https://www.google.com/search?num=10&sca_esv=c153a4e0857361d4&rlz=1C1VDKB_enIN1126IN1126&sxsrf=ANbL-n6lsd-fg8_pZy_yNipjqjLinYR3Yg:1776939264808&kgmid=/g/11y63w8z1f&q=Dr.+Amit+Upadhyay+%7C+Best+Sr.+Pediatrician,+Child+Specialist+Doctor+in+Meerut+%7C&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5aea14d2b9567395&utm_source=sh/x/loc/uni/m1/1#lrd=0x390c655c8c1fe40f:0x22cd1a0a6c203116,3,,,," target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="testimonial__item">
+                            <div class="testimonial__author">
+                                <div class="testimonial__author__icon">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial__author__text">
+                                    <h5>Gaurav Verma</h5>
+                                    <span>Parent · 6 months ago</span>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>
+                                I consider Nutema Hospital to be the best hospital, and I'm especially grateful for Dr. Anupama Upadhyaya, Dr. Amit Upadhyaya and Dr. Priyanka Gupta. For us they are nothing less than a God-sent angel. The hospital is well-maintained, with excellent facilities and a hygienic and supportive staff.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Testimonial 5 - Pooja Verma -->
+                <div class="col-lg-6">
+                    <a href="https://www.google.com/search?num=10&sca_esv=c153a4e0857361d4&rlz=1C1VDKB_enIN1126IN1126&sxsrf=ANbL-n6lsd-fg8_pZy_yNipjqjLinYR3Yg:1776939264808&kgmid=/g/11y63w8z1f&q=Dr.+Amit+Upadhyay+%7C+Best+Sr.+Pediatrician,+Child+Specialist+Doctor+in+Meerut+%7C&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5aea14d2b9567395&utm_source=sh/x/loc/uni/m1/1#lrd=0x390c655c8c1fe40f:0x22cd1a0a6c203116,3,,,," target="_blank" style="text-decoration: none; color: inherit;">
                         <div class="testimonial__item">
                             <div class="testimonial__author">
                                 <div class="testimonial__author__icon">
@@ -672,7 +763,7 @@
                                 </div>
                                 <div class="testimonial__author__text">
                                     <h5>Pooja Verma</h5>
-                                    <span>Mother</span>
+                                    <span>Mother · 5 months ago</span>
                                 </div>
                             </div>
                             <div class="rating">
@@ -683,68 +774,70 @@
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <p>
-                                The level of care and attention given to my newborn was exceptional. 
-                                The doctor explained everything clearly and supported us throughout.
+                                My son Shivansh Sirohi, 14 months old, got hospitalized here at Nutima under Dr. Amit Upadhyay Sir. Now he is better and we have been discharged too. Amit Sir is a really very kind person and his behaviour and treatment is excellent. Thank you Sir for saving the life of our child.
                             </p>
                         </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__icon">
-                                    <i class="fa-solid fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Amit Gupta</h5>
-                                    <span>Father</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p>
-                                One of the best pediatricians in the region. The advanced NICU 
-                                facilities and experienced staff made a huge difference for our child.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__icon">
-                                    <i class="fa-solid fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Neha Singh</h5>
-                                    <span>Mother</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p>
-                                Highly recommended for newborn care. The staff is supportive, 
-                                and the facilities are modern and well-equipped.
-                            </p>
-                        </div>
-                    </div>
-
+                    </a>
                 </div>
+
+                <!-- Testimonial 6 - Shanawaz Ansari -->
+                <div class="col-lg-6">
+                    <a href="https://www.google.com/search?num=10&sca_esv=c153a4e0857361d4&rlz=1C1VDKB_enIN1126IN1126&sxsrf=ANbL-n6lsd-fg8_pZy_yNipjqjLinYR3Yg:1776939264808&kgmid=/g/11y63w8z1f&q=Dr.+Amit+Upadhyay+%7C+Best+Sr.+Pediatrician,+Child+Specialist+Doctor+in+Meerut+%7C&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5aea14d2b9567395&utm_source=sh/x/loc/uni/m1/1#lrd=0x390c655c8c1fe40f:0x22cd1a0a6c203116,3,,,," target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="testimonial__item">
+                            <div class="testimonial__author">
+                                <div class="testimonial__author__icon">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial__author__text">
+                                    <h5>Shanawaz Ansari</h5>
+                                    <span>Parent · 3 months ago</span>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>
+                                My baby was born weighing only 950 grams at 6 months 10 days. We admitted him at Nutema under Dr. Amit Upadhyay. He treated our baby very well — even when my family could not always be present. Today I am taking my baby home. Dr. Amit gave great support in billing too. Heartfelt thanks to Dr. Amit and his entire team.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Testimonial 7 - Ramandeep Singh -->
+                <div class="col-lg-6">
+                    <a href="https://www.google.com/search?num=10&sca_esv=c153a4e0857361d4&rlz=1C1VDKB_enIN1126IN1126&sxsrf=ANbL-n6lsd-fg8_pZy_yNipjqjLinYR3Yg:1776939264808&kgmid=/g/11y63w8z1f&q=Dr.+Amit+Upadhyay+%7C+Best+Sr.+Pediatrician,+Child+Specialist+Doctor+in+Meerut+%7C&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5aea14d2b9567395&utm_source=sh/x/loc/uni/m1/1#lrd=0x390c655c8c1fe40f:0x22cd1a0a6c203116,3,,,," target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="testimonial__item">
+                            <div class="testimonial__author">
+                                <div class="testimonial__author__icon">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial__author__text">
+                                    <h5>Ramandeep Singh</h5>
+                                    <span>Parent · 4 months ago</span>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>
+                                Both my children were admitted under Dr. Amit Upadhyay Ji. My first baby is being discharged today and I am very happy. The treatment was excellent and Amit Sir listened to us with great care. He also gave a good discount. The entire staff feels like family. Thank you so much Dr. Amit Sir and your whole team.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
     <!-- Testimonials Section End -->
 
     <!-- Footer Section Begin -->
